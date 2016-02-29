@@ -1,22 +1,21 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<tittle>Miss Stone blog</tittle>
-	<head>
-	<body>
-		<div>
-			<h1><a href="">My first post</a></h1>
-		</div>
+<head>
 
-		<div>
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis ves
-		</div>
+	<title>Miss Stone blog</title>
 
+<head>
+<body>
+	<div>
+		<h1><a href="/">Miss Stone blog</a></h1>
+	</div>
+
+	{% for post in posts %}
 		<div>
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis ves
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaks }}</p>
 		</div>
-	</body>
+	{% endfor %}
+</body>
 <html>
